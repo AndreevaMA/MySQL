@@ -6,14 +6,14 @@ USE homework2;
 CREATE TABLE sales
 (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    retail_chain VARCHAR(20),
-    product VARCHAR(100),
-    sales_qty INT
+	retail_chain VARCHAR(20),
+	product VARCHAR(100),
+	sales_qty INT
 );
 
 INSERT INTO sales(retail_chain, product, sales_qty)
 VALUES ("mvideo", "Samsung Galaxy S7 Edge", 150),
-	   ("dns", "Samsung Galaxy Note5", 450),
+       ("dns", "Samsung Galaxy Note5", 450),
        ("eldorado", "Samsung Galaxy Tab3", 200),
        ("dns", "Samsung Galaxy S8", 450),
        ("dns", "Samsung Galaxy A5 (2017)", 1150),
@@ -34,11 +34,11 @@ SELECT
 	retail_chain,
 	product,
 	sales_qty,
-    CASE
+	CASE
 		WHEN sales_qty > 300 THEN "Greater than 300"
 		WHEN sales_qty >= 100 AND sales_qty <= 300 THEN "100 to 300"
 		ELSE "Less than 100"
-     END sales_group
+	END sales_group
 FROM sales;
 
 -- Создайте таблицу “orders”, заполните ее значениями.
@@ -47,14 +47,14 @@ FROM sales;
 CREATE TABLE orders
 (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    order_date DATE,
-    amount_usd DECIMAL(5,2),
-    order_status VARCHAR(10)
+	order_date DATE,
+	amount_usd DECIMAL(5,2),
+	order_status VARCHAR(10)
 );
 
 INSERT INTO orders(order_date, amount_usd, order_status)
 VALUES ("2023-01-20", 20.16, "OPEN"),
-	   ("2023-04-29", 45.00, "CANCELLED"),
+       ("2023-04-29", 45.00, "CANCELLED"),
        ("2023-02-14", 12.87, "CLOSED"),
        ("2023-04-15", 31.00, "CLOSED"),
        ("2023-05-30", 18.40, "OPEN"),
@@ -71,13 +71,13 @@ VALUES ("2023-01-20", 20.16, "OPEN"),
        
 SELECT
 	order_date,
-    amount_usd,
-    order_status,
-    CASE
+	amount_usd,
+	order_status,
+	CASE
 		WHEN order_status = "OPEN" THEN "Order is open state"
 		WHEN order_status = "CLOSED" THEN "Order is closed"
 		ELSE "Order is cancelled"
-     END full_order_status
+	END full_order_status
 FROM orders;
 
 -- Чем NULL отличается от 0?
