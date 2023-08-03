@@ -4,8 +4,8 @@ USE homework5;
 CREATE TABLE cars
 (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    car_name VARCHAR(20) NULL,
-    cost INT NOT NULL
+	car_name VARCHAR(20) NULL,
+	cost INT NOT NULL
 );
 
 INSERT INTO cars(car_name, cost)
@@ -50,24 +50,24 @@ WHERE car_name IN ("Skoda", "Audi");
 CREATE TABLE Analysis
 (
 	an_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    an_name VARCHAR(20) NULL,
-    an_cost INT NOT NULL,
-    an_price INT NOT NULL,
-    an_group VARCHAR(20) NULL
+	an_name VARCHAR(20) NULL,
+	an_cost INT NOT NULL,
+	an_price INT NOT NULL,
+	an_group VARCHAR(20) NULL
 );
 
 CREATE TABLE An_groups
 (
 	gr_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    gr_name VARCHAR(20) NULL,
-    gr_temp INT NOT NULL
+	gr_name VARCHAR(20) NULL,
+	gr_temp INT NOT NULL
 );
 
 CREATE TABLE Orders
 (
 	ord_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    ord_datetime DATE NULL,
-    ord_an VARCHAR(20) NOT NULL
+	ord_datetime DATE NULL,
+	ord_an VARCHAR(20) NOT NULL
 );
 
 INSERT INTO Analysis(an_name, an_cost, an_price, an_group)
