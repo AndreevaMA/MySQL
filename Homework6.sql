@@ -19,10 +19,10 @@ BEGIN
 
 	SET dys = FLOOR(sec / 60 / 60 / 24);
 	SET sec = sec - (dys * 24 * 60 * 60);
-    SET hrs = FLOOR(sec / 60 / 60);
-    SET sec = sec - (hrs * 60 * 60);
-    SET min = FLOOR(sec / 60);
-    SET sec = sec - (min * 60);
+	SET hrs = FLOOR(sec / 60 / 60);
+	SET sec = sec - (hrs * 60 * 60);
+	SET min = FLOOR(sec / 60);
+	SET sec = sec - (min * 60);
     
 	SET formatted = CONCAT(dys, " days ", hrs, " hours ", min, " minutes ", sec, " seconds");
     
@@ -39,8 +39,8 @@ DELIMITER //
 CREATE PROCEDURE even_numbers(num INT)
 BEGIN
 	
-    DECLARE result VARCHAR(100) DEFAULT "";
-    DECLARE n INT;
+	DECLARE result VARCHAR(100) DEFAULT "";
+	DECLARE n INT;
 	SET n = 2;
 
     WHILE n <= num DO
